@@ -8,10 +8,112 @@ parser code
     public Nodo padre;
     private Symbol s;
 
-    @Override             //devuelve informacion del token
+     @Override             //devuelve informacion del token
     public void syntax_error(Symbol s){
-        resultado +=  "Error Sintactico en la Linea " + (s.right+1) +" Columna "+s.left+ ". Identificador " +s.value + " no reconocido.\n";
-        System.out.println("Error Sintactico en la Linea " + (s.right+1) +" Columna "+s.left+ ". Identificador " +s.value + " no reconocido." );
+    switch (s.left) {
+          case 64:
+              resultado += "Falta la palabra 'void' en la clase Main en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta la palabra 'void' en la clase Main en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 239:
+              resultado += "Falta la palabra reservada 'if' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta la palabra reservada 'if' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 243:
+              resultado += "Falta el parentesis de apertura en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta el parentesis de apertura en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 252:
+              resultado += "Falta signo de Operación en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta signo de Operación en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 257:
+              resultado += "Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 312:
+              resultado += "Faltan comillas en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Faltan comillas  en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 345:
+              resultado += "Falta palabra reservada 'else' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta palabra reservada 'else' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          case 408:
+              resultado += "Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+//ciclo for
+         case 302:
+              resultado += "Falta la palabra reservada 'for' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta la palabra reservada 'for' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 306:
+              resultado += "Falta parentesis de apertura en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta parentesis de apertura en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 314:
+              resultado += "Falta signo de igualdad en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta signo de igualdad en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 321:
+              resultado += "Falta signo de comparación en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta signo de comparación en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 326:
+              resultado += "Falta signo de adición en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta signo de adición en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 330:
+              resultado += "Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 375:
+              resultado += "Faltan ';' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Faltan ';' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 377:
+              resultado += "Orden no correcto en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Orden no correcto  en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+//while
+         case 139:
+              resultado += "Falta valor para variable en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta valor para variable en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 151:
+              resultado += "Falta palabra reservada 'do' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta palabra reservada 'do' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 194:
+              resultado += "Faltan comillas en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Faltan comillas en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 209:
+              resultado += "Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta parentesis de cierre en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 229:
+              resultado += "Falta variable en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta variable en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 250:
+              resultado += "Falta ';' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta ';' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 258:
+              resultado += "Orden no correcto en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Orden no correcto en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+         case 254:
+              resultado += "Falta palabra reservada 'while' en la Linea " + (s.right+1) +" Columna "+s.left+ ".\n";
+              System.out.println("Falta palabra reservada 'while' en la Linea " + (s.right+1) +" Columna "+s.left+ ".");
+              break;
+          default:
+              resultado += "Error Sintactico en la Linea " + (s.right+1) +" Columna "+s.left+ ". Identificador " +s.value + " no reconocido.\n";
+              System.out.println("Error Sintactico en la Linea " + (s.right+1) +" Columna "+s.left+ ". Identificador " +s.value + " no reconocido." );
+              break;
+      }
     }
 
     public Symbol getS(){
